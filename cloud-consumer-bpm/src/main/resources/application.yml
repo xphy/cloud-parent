@@ -1,0 +1,27 @@
+server:
+  port: 9997
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:9999/eureka/
+spring:
+  application:
+    name: eureka-bpm
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/uc?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+#  cloud:
+#    config:
+#      uri: http://localhost:9998
+#      fail-fast: true
+#  profiles:                       #��ȡ���ļ�����ȥע���ϵͳ��
+#    active: dev
+
+
+
