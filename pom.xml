@@ -20,6 +20,7 @@
         <module>cloud-eureka</module>
         <module>cloud-uc</module>
         <module>cloud-consumer-bpm</module>
+        <module>cloud-zuul</module>
     </modules>
 
     <properties>
@@ -41,6 +42,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- 引入Javax-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>2.0.3.RELEASE</version>
+            </dependency>
             <!--spring-cloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -61,6 +68,13 @@
                 <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
                 <version>${springcoud.eureka}</version>
             </dependency>
+            <!-- zuul路由网关 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+                <version>${springcoud.eureka}</version>
+            </dependency>
+
             <!-- config-->
             <!--        <dependency>-->
             <!--            <groupId>org.springframework.cloud</groupId>-->
@@ -79,11 +93,11 @@
                 <version>${springboot.version}</version>
             </dependency>
             <!-- log4j2  -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-log4j2</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-log4j2</artifactId>-->
+<!--                <version>${slf4j.version}</version>-->
+<!--            </dependency>-->
             <!--数据库的配置-->
             <dependency>
                 <groupId>mysql</groupId>
@@ -128,6 +142,49 @@
                 <version>1.16.20</version>
                 <scope>provided</scope>
             </dependency>
+            <!--jwt-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.1</version>
+            </dependency>
+            <!-- JSONObject 需要引入6个jar包 -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <version>2.4</version>
+                <classifier>jdk15</classifier>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.ezmorph</groupId>
+                <artifactId>ezmorph</artifactId>
+                <version>1.0.4</version>
+            </dependency>
+
+
+
+
+
             <!--boot junit test-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>

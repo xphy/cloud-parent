@@ -1,5 +1,5 @@
 server:
-  port: 9998
+  port: 9996
 eureka:
   instance:
     hostname: 127.0.0.1
@@ -10,21 +10,19 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:9999/eureka/
 spring:
   application:
-    name: eureka-user-manager     #注册的系统名
+    name: springcloud-zuul-getaway    #注册的系统名
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/uc?useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
-mybatis:
-  mapper-locations: classpath:mapping/*Mapper.xml
-##自定义jwt配置
-jwt:
-  secret: A0B1C2D3E4F5G6H7I8J9KALBMCNDOEPFQ0R1S2T3U4V5W6X7Y8Z9
-  # tocken 过期时间，单位秒
-  expire: 300
-  # 需要认证的url，多个URL使用英文逗号,分割
-  authorised-urls: /apis/fis/redis/**
-
+zuul:
+  routes:
+    eureka-user-manager:
+      path: /api/uc/**
+      serviceId: eureka-user-manager
+#    feign-consumer:
+#      path: /feign-consumer/**
+#      serviceId: feign-consumer
 
 

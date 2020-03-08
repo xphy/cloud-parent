@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/cloud-consumer-bpm" />
     <file type="web" url="file://$PROJECT_DIR$/cloud-eureka" />
     <file type="web" url="file://$PROJECT_DIR$/cloud-uc" />
+    <file type="web" url="file://$PROJECT_DIR$/cloud-zuul" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
